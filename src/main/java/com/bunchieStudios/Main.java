@@ -5,6 +5,6 @@ package com.bunchieStudios;
  */
 public class Main {
     static void main(String[] args){
-        
+
     }
 }

@@ -5,23 +5,23 @@ package com.bunchieStudios.wpi;
  */
 public class TestRobot extends IterativeRobot {
 
-    void robotInit() {
+    public void robotInit() {
 
     }
 
-    void autonomousInit() {
+    public void autonomousInit() {
 
     }
 
-    void autonomousPeriodic() {
+    public void autonomousPeriodic() {
 
     }
 
-    void teleopInit() {
+    public void teleopInit() {
 
     }
 
-    void teleopPeriodic() {
+    public void teleopPeriodic() {
 
     }
 }
