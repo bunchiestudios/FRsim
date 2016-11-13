@@ -1,0 +1,27 @@
+package com.bunchieStudios.wpi;
+
+/**
+ * Created by franspaco on 7/11/16.
+ */
+public class TestRobot extends IterativeRobot {
+
+    void robotInit() {
+
+    }
+
+    void autonomousInit() {
+
+    }
+
+    void autonomousPeriodic() {
+
+    }
+
+    void teleopInit() {
+
+    }
+
+    void teleopPeriodic() {
+
+    }
+}
