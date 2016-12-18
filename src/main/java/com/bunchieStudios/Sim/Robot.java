@@ -7,6 +7,16 @@ import com.bunchieStudios.Util.Vector2;
  * as collission and interaction with world objects (such as the map and game elements)
  */
 public class Robot {
+    private static Robot _instance = null;
+
+    public static synchronized Robot getInstance() {
+        return _instance;
+    }
+
+    public static void initialize(Vector2 startPosition, double theta) {
+        _instance = new Robot(startPosition, theta);
+    }
+
     private Vector2 position, velocity, acceleration;
     private double theta, omega, alpha;
 
@@ -29,7 +39,7 @@ public class Robot {
      * @param device The object representing the device
      * @param port Port number to be attached to on the roboRIO
      */
-    public void setAnalogPort(AnalogDevice device, int port) {
+    public synchronized void setAnalogPort(AnalogDevice device, int port) {
 
     }
 
@@ -38,7 +48,7 @@ public class Robot {
      * @param motor The motor object
      * @param port  Port number the motor is connected to on the roboRIO
      */
-    public void setMotorPort(Motor motor, int port) {
+    public synchronized void setMotorPort(Motor motor, int port) {
 
     }
 
@@ -47,7 +57,7 @@ public class Robot {
      * @param port  Port number of the motor
      * @param value Value of the PWM signal, from -1 to 1
      */
-    public void setPWM(int port, double value) {
+    public synchronized void setPWM(int port, double value) {
 
     }
 
@@ -57,14 +67,14 @@ public class Robot {
      * @param port Port number of the analog channel
      * @return The voltage reading of the port
      */
-    public double readAnalog(int port) {
+    public synchronized double readAnalog(int port) {
         return 0;
     }
 
     /**
      * Updates the state of the robot and the simulation. Should be called periodically
      */
-    public void update() {
+    public synchronized void update() {
 
     }
 }
