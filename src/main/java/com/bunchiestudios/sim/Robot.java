@@ -33,7 +33,7 @@ public class Robot {
      * @param startPosition The initial position of the robot.
      * @param theta Initial angle of the robot
      */
-    public Robot(Vector2 startPosition, double theta) {
+    private Robot(Vector2 startPosition, double theta) {
         this.position = startPosition;
         this.velocity = new Vector2();
         this.acceleration = new Vector2();
