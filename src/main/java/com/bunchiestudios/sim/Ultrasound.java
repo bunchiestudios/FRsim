@@ -9,11 +9,11 @@ public class Ultrasound implements AnalogDevice {
 
     }
 
-    public double getVoltage() {
+    public synchronized double getVoltage() {
         return 0;
     }
 
-    public void update() {
+    public synchronized void update() {
 
     }
 }
