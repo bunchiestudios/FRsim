@@ -1,6 +1,6 @@
-package com.bunchieStudios.Sim;
+package com.bunchiestudios.sim;
 
-import com.bunchieStudios.Util.Vector2;
+import com.bunchiestudios.util.Vector2;
 
 /**
  * This class represents the simulated robot. It manages the robot's location in the world, sensors, motors, as well

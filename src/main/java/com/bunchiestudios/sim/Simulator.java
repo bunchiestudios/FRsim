@@ -1,6 +1,6 @@
-package com.bunchieStudios.Sim;
+package com.bunchiestudios.sim;
 
-import com.bunchieStudios.Util.Vector2;
+import com.bunchiestudios.util.Vector2;
 
 /**
  * Created by rdelfin on 12/17/16.

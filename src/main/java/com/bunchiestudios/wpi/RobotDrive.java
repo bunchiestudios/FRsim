@@ -1,4 +1,4 @@
-package com.bunchieStudios.wpi;
+package com.bunchiestudios.wpi;
 
 /**
  * Created by franspaco on 7/11/16.

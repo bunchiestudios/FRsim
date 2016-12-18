@@ -1,4 +1,4 @@
-package com.bunchieStudios;
+package com.bunchiestudios;
 
 /**
  * Created by franspaco on 13/11/16.

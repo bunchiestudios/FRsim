@@ -1,4 +1,4 @@
-package com.bunchieStudios.Sim;
+package com.bunchiestudios.sim;
 
 /**
  * Created by rdelfin on 11/13/16.
