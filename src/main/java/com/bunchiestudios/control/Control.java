@@ -1,10 +1,9 @@
-package com.bunchieStudios.control;
+package com.bunchiestudios.control;
 
-import com.bunchieStudios.RobotCode.MyRobot;
-import com.bunchieStudios.wpi.*;
+import com.bunchiestudios.robotcode.MyRobot;
+import com.bunchiestudios.wpi.*;
 //import net.java.games.*;
 
-import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,6 +1,6 @@
-package com.bunchieStudios.RobotCode;
+package com.bunchiestudios.robotcode;
 
-import com.bunchieStudios.wpi.IterativeRobot;
+import com.bunchiestudios.wpi.IterativeRobot;
 
 /**
  * Created by franspaco on 13/11/16.

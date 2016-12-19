@@ -1,6 +1,6 @@
-package com.bunchieStudios;
+package com.bunchiestudios;
 
-import com.bunchieStudios.control.Control;
+import com.bunchiestudios.control.Control;
 
 /**
  * Created by franspaco on 13/11/16.

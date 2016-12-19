@@ -1,4 +1,4 @@
-package com.bunchieStudios.Util;
+package com.bunchiestudios.util;
 
 /**
  * Class represents a 2-Dimensional vector, with all the most common operations

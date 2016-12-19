@@ -1,6 +1,6 @@
-package com.bunchieStudios.wpi;
+package com.bunchiestudios.wpi;
 
-import com.bunchieStudios.control.Control;
+import com.bunchiestudios.control.Control;
 
 /**
  * Created by franspaco on 12/18/2016.

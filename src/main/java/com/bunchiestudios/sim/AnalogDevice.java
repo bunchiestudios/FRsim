@@ -1,4 +1,4 @@
-package com.bunchieStudios.Sim;
+package com.bunchiestudios.sim;
 
 /**
  * Represents an analog device
