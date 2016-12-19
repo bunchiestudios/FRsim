@@ -2,6 +2,12 @@ package com.bunchiestudios.sim;
 
 import com.bunchiestudios.util.Vector2;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
 /**
  * This class represents the simulated robot. It manages the robot's location in the world, sensors, motors, as well
  * as collission and interaction with world objects (such as the map and game elements)
@@ -20,6 +26,9 @@ public class Robot {
     private Vector2 position, velocity, acceleration;
     private double theta, omega, alpha;
 
+    private Map<Integer, AnalogDevice> analogDevices;
+    private Map<Integer, Motor> motors;
+
     /**
      * Main constructor for the robot. Initializes a robot with no devices, at a starting position and angle
      * @param startPosition The initial position of the robot.
@@ -32,6 +41,8 @@ public class Robot {
         this.theta = theta;
         this.omega = 0;
         this.alpha = 0;
+        this.analogDevices = new HashMap<Integer, AnalogDevice>();
+        this.motors = new HashMap<Integer, Motor>();
     }
 
     /**
@@ -40,7 +51,9 @@ public class Robot {
      * @param port Port number to be attached to on the roboRIO
      */
     public synchronized void setAnalogPort(AnalogDevice device, int port) {
-
+        if(!analogDevices.containsKey(port)) {
+            analogDevices.put(port, device);
+        }
     }
 
     /**
@@ -49,7 +62,9 @@ public class Robot {
      * @param port  Port number the motor is connected to on the roboRIO
      */
     public synchronized void setMotorPort(Motor motor, int port) {
-
+        if(!motors.containsKey(port)) {
+            motors.put(port, motor);
+        }
     }
 
     /**
@@ -58,7 +73,8 @@ public class Robot {
      * @param value Value of the PWM signal, from -1 to 1
      */
     public synchronized void setPWM(int port, double value) {
-
+        if(motors.containsKey(port))
+            motors.get(port).setValue(value);
     }
 
     /**
@@ -68,6 +84,8 @@ public class Robot {
      * @return The voltage reading of the port
      */
     public synchronized double readAnalog(int port) {
+        if(analogDevices.containsKey(port))
+            return analogDevices.get(port).getVoltage();
         return 0;
     }
 
