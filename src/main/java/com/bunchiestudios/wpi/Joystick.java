@@ -2,6 +2,7 @@ package com.bunchiestudios.wpi;
 
 import com.bunchiestudios.control.Control;
 
+
 /**
  * Created by franspaco on 12/18/2016.
  */
@@ -10,10 +11,11 @@ public class Joystick {
 
     public Joystick(int port) {
         this.port = port;
-        Control.joysticks.put(port, this);
+        Control.joysticks.putIfAbsent(port, this);
     }
 
     public double getX(){
+
         return 0;
     }
 
