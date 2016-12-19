@@ -22,8 +22,8 @@ public class Robot {
         _instance = r;
     }
 
-    private Vector2 position, velocity, acceleration;
-    private double theta, omega, alpha;
+    protected Vector2 position, velocity, acceleration;
+    protected double theta, omega, alpha;
 
     private Map<Integer, AnalogDevice> analogDevices;
     private Map<Integer, Motor> motors;
@@ -92,8 +92,6 @@ public class Robot {
      * Updates the state of the robot and the simulation. Should be called periodically
      */
     public synchronized void update() {
-        for(Motor m : motors.values()) {
-            m.update();
-        }
+        motors.values().forEach(Motor::update);
     }
 }

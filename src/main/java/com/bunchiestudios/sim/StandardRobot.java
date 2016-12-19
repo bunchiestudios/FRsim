@@ -7,8 +7,8 @@ import com.bunchiestudios.util.Vector2;
  */
 public class StandardRobot extends Robot {
 
-    Motor leftMotor;
-    Motor rightMotor;
+    private Motor leftMotor;
+    private Motor rightMotor;
 
     /**
      * Main constructor for the robot. Initializes a robot with no devices, at a starting position
@@ -25,5 +25,12 @@ public class StandardRobot extends Robot {
 
         setMotorPort(this.leftMotor, 1);
         setMotorPort(this.rightMotor, 2);
+    }
+
+    @Override
+    public void update() {
+        super.update();
+
+
     }
 }
