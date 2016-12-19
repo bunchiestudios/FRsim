@@ -2,7 +2,7 @@ package com.bunchieStudios.control;
 
 import com.bunchieStudios.RobotCode.MyRobot;
 import com.bunchieStudios.wpi.*;
-import net.java.games.*;
+//import net.java.games.*;
 
 import javax.swing.*;
 import java.util.HashMap;
