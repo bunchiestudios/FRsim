@@ -91,7 +91,13 @@ public class Robot {
     /**
      * Updates the state of the robot and the simulation. Should be called periodically
      */
-    public synchronized void update() {
+    public synchronized void update(double ts) {
         motors.values().forEach(Motor::update);
+
+        this.velocity = this.velocity.add(this.acceleration.scale(ts));
+        this.position = this.position.add(this.velocity.scale(ts));
+
+        this.omega += this.alpha*ts;
+        this.theta += this.omega*ts;
     }
 }
