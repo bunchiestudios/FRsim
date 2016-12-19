@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  * This class represents the simulated robot. It manages the robot's location in the world, sensors, motors, as well
- * as collission and interaction with world objects (such as the map and game elements)
+ * as collision and interaction with world objects (such as the map and game elements)
  */
 public class Robot {
     private static Robot _instance = null;
@@ -18,8 +18,8 @@ public class Robot {
         return _instance;
     }
 
-    public static void initialize(Vector2 startPosition, double theta) {
-        _instance = new Robot(startPosition, theta);
+    public static void initialize(Robot r) {
+        _instance = r;
     }
 
     private Vector2 position, velocity, acceleration;
@@ -33,7 +33,7 @@ public class Robot {
      * @param startPosition The initial position of the robot.
      * @param theta Initial angle of the robot
      */
-    private Robot(Vector2 startPosition, double theta) {
+    public Robot(Vector2 startPosition, double theta) {
         this.position = startPosition;
         this.velocity = new Vector2();
         this.acceleration = new Vector2();
@@ -92,6 +92,8 @@ public class Robot {
      * Updates the state of the robot and the simulation. Should be called periodically
      */
     public synchronized void update() {
-
+        for(Motor m : motors.values()) {
+            m.update();
+        }
     }
 }

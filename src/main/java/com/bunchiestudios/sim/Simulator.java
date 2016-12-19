@@ -12,9 +12,9 @@ public class Simulator extends Thread {
         running = false;
     }
 
-    Simulator(Vector2 robotStartPos, double robotStartTheta) {
-        Robot.initialize(robotStartPos, robotStartTheta);
-        running = true;
+    public Simulator(Vector2 robotStartPos, double robotStartTheta) {
+        Robot.initialize(new StandardRobot(robotStartPos, robotStartTheta));
+        this.running = true;
     }
 
     @Override
@@ -35,6 +35,6 @@ public class Simulator extends Thread {
     }
 
     private void simulate() {
-
+        Robot.getInstance().update();
     }
 }
