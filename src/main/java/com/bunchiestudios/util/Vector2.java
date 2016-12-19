@@ -115,4 +115,13 @@ public class Vector2 {
     public double dot(Vector2 v) {
         return x*v.x + y*v.y;
     }
+
+    /**
+     * Rotates this vector by an angle `theta`.
+     * @param theta Angle to rotate by
+     * @return New rotated vector
+     */
+    public Vector2 rotate(double theta) {
+        return Matrix2.rotate(theta).times(this);
+    }
 }
