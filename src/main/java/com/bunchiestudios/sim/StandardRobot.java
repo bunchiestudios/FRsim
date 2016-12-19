@@ -32,6 +32,14 @@ public class StandardRobot extends Robot {
         this.height = height;
     }
 
+    public double getWidth() {
+        return width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
     @Override
     public void update(double ts) {
         super.update(ts);
