@@ -91,7 +91,7 @@ public class Robot {
     /**
      * Updates the state of the robot and the simulation. Should be called periodically
      */
-    public synchronized void update(double ts) {
+    public synchronized void update(double ts, Vector2 minMap, Vector2 maxMap) {
         motors.values().forEach(Motor::update);
 
         this.velocity = this.velocity.add(this.acceleration.scale(ts));
@@ -99,5 +99,21 @@ public class Robot {
 
         this.omega += this.alpha*ts;
         this.theta += this.omega*ts;
+
+        if(position.x < minMap.x) {
+            position.x = minMap.x;
+        }
+
+        if(position.y < minMap.y) {
+            position.y = minMap.y;
+        }
+
+        if(position.x > maxMap.x) {
+            position.x = maxMap.x;
+        }
+
+        if(position.y > maxMap.y) {
+            position.y = maxMap.y;
+        }
     }
 }
