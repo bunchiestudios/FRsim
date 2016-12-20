@@ -2,8 +2,6 @@ package com.bunchiestudios.control;
 
 import com.bunchiestudios.robotcode.MyRobot;
 import com.bunchiestudios.wpi.*;
-import com.sun.javafx.collections.MappingChange;
-import com.sun.xml.internal.ws.api.databinding.MappingInfo;
 
 
 import javax.swing.*;
@@ -20,12 +18,12 @@ public class Control extends Thread {
 
     public static Map<Integer, Joystick> joysticks;
     public static Map<Integer, Talon> talons;
-    public static Map<Integer, AnalogChannel> analogs;
+    public static Map<Integer, AnalogInput> analogs;
 
     public Control(){
         joysticks = new HashMap<Integer, Joystick>();
         talons    = new HashMap<Integer, Talon>();
-        analogs   = new HashMap<Integer, AnalogChannel>();
+        analogs   = new HashMap<Integer, AnalogInput>();
 
         String[] options = {"Autonomous", "Teleop", "Full routine" };
         routine = JOptionPane.showOptionDialog(null, "Select an option:", "Routine", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, null);

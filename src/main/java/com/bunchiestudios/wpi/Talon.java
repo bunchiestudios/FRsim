@@ -14,13 +14,16 @@ public class Talon {
         value = 0;
         Control.talons.putIfAbsent(port, this);
     }
+    void free(){
+
+    }
 
     double get(){
         return value;
     }
 
-    void set(){
-        
+    void set(double input){
+        value = input;
     }
 
 }
