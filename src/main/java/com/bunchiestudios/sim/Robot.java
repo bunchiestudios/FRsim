@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  * This class represents the simulated robot. It manages the robot's location in the world, sensors, motors, as well
- * as collission and interaction with world objects (such as the map and game elements)
+ * as collision and interaction with world objects (such as the map and game elements)
  */
 public class Robot {
     private static Robot _instance = null;
@@ -18,12 +18,12 @@ public class Robot {
         return _instance;
     }
 
-    public static void initialize(Vector2 startPosition, double theta) {
-        _instance = new Robot(startPosition, theta);
+    public static void initialize(Robot r) {
+        _instance = r;
     }
 
-    private Vector2 position, velocity, acceleration;
-    private double theta, omega, alpha;
+    protected Vector2 position, velocity, acceleration;
+    protected double theta, omega, alpha;
 
     private Map<Integer, AnalogDevice> analogDevices;
     private Map<Integer, Motor> motors;
@@ -91,7 +91,29 @@ public class Robot {
     /**
      * Updates the state of the robot and the simulation. Should be called periodically
      */
-    public synchronized void update() {
+    public synchronized void update(double ts, Vector2 minMap, Vector2 maxMap) {
+        motors.values().forEach(Motor::update);
 
+        this.velocity = this.velocity.add(this.acceleration.scale(ts));
+        this.position = this.position.add(this.velocity.scale(ts));
+
+        this.omega += this.alpha*ts;
+        this.theta += this.omega*ts;
+
+        if(position.x < minMap.x) {
+            position.x = minMap.x;
+        }
+
+        if(position.y < minMap.y) {
+            position.y = minMap.y;
+        }
+
+        if(position.x > maxMap.x) {
+            position.x = maxMap.x;
+        }
+
+        if(position.y > maxMap.y) {
+            position.y = maxMap.y;
+        }
     }
 }

@@ -5,7 +5,7 @@ package com.bunchiestudios.sim;
  */
 public class Ultrasound implements AnalogDevice {
 
-    Ultrasound() {
+    private Ultrasound() {
 
     }
 
