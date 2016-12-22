@@ -8,6 +8,7 @@ import com.bunchiestudios.util.Vector2;
 public class Simulator extends Thread {
     private double ts;
     private boolean running;
+    private Vector2 minMap, maxMap;
 
     public void stopSimulator() {
         running = false;
@@ -17,6 +18,8 @@ public class Simulator extends Thread {
         Robot.initialize(new StandardRobot(robotStartPos, robotStartTheta, 0.6, 0.9));
         this.running = true;
         this.ts = 0.016;
+        minMap = new Vector2(0,0);
+        maxMap = new Vector2(10, 10);
     }
 
     @Override
@@ -37,6 +40,6 @@ public class Simulator extends Thread {
     }
 
     private void simulate() {
-        Robot.getInstance().update(ts);
+        Robot.getInstance().update(ts, minMap, maxMap);
     }
 }
