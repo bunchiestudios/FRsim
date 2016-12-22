@@ -13,10 +13,10 @@ public class AnalogInput {
     }
 
     void free(){
-        
+
     }
 
     double getAverageVoltage(){
-
+        
     }
 }
