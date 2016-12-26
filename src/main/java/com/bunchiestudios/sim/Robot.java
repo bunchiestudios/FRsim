@@ -2,9 +2,7 @@ package com.bunchiestudios.sim;
 
 import com.bunchiestudios.util.Vector2;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

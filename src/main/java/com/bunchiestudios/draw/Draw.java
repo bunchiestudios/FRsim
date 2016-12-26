@@ -1,11 +1,22 @@
 package com.bunchiestudios.draw;
 
+
 import javax.swing.*;
 
 /**
  * Created by rdelfin on 12/21/16.
  */
 public class Draw extends Thread {
+    private boolean running;
+
+    public Draw() {
+        running = true;
+    }
+
+    public void stopScreen() {
+        running = false;
+    }
+
     @Override
     public void run() {
         SimPanel panel = new SimPanel();                            // window for drawing
@@ -20,7 +31,10 @@ public class Draw extends Thread {
         application.setVisible(true);
 
         try {
-            Thread.sleep(1000);
+            while (running) {
+                application.repaint();
+                Thread.sleep(10);
+            }
         } catch(InterruptedException e) {
             e.printStackTrace();
         }

@@ -5,7 +5,7 @@ import org.junit.Test;
 /**
  * Created by rdelfin on 12/21/16.
  */
-public class WindowTest {
+public class RunWindow {
 
     @Test
     public void windowTest() throws InterruptedException {
