@@ -1,6 +1,7 @@
 package com.bunchiestudios.control;
 
 import com.bunchiestudios.robotcode.MyRobot;
+import com.bunchiestudios.sim.Robot;
 import com.bunchiestudios.wpi.*;
 
 
@@ -37,6 +38,8 @@ public class Control extends Thread {
     public void run(){
         //code.autonomousInit();
         //Joystick j1 = new Joystick(1);
+        Robot lul = Robot.getInstance();
+
 
     }
 }

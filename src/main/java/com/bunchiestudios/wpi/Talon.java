@@ -15,7 +15,7 @@ public class Talon {
         Control.talons.putIfAbsent(port, this);
     }
     void free(){
-
+        Control.talons.remove(port);
     }
 
     double get(){
