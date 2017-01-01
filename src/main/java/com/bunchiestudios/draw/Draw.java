@@ -27,7 +27,7 @@ public class Draw extends Thread {
         application.add(panel);
 
 
-        application.setSize(500, 400);         // window is 500 pixels wide, 400 high
+        application.setSize(1024, 768);         // window is 500 pixels wide, 400 high
         application.setVisible(true);
 
         try {

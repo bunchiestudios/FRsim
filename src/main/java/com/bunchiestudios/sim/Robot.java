@@ -114,4 +114,8 @@ public class Robot {
             position.y = maxMap.y;
         }
     }
+
+    public Vector2 getPosition() {
+        return position;
+    }
 }
