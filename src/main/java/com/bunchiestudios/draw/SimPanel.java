@@ -1,39 +1,35 @@
 package com.bunchiestudios.draw;
 
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.BufferedImage;
+import com.bunchiestudios.sim.Robot;
+import com.bunchiestudios.sim.StandardRobot;
+
+import javax.swing.JPanel;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
 
 /**
  * Created by rdelfin on 12/21/16.
  */
 public class SimPanel extends JPanel {
-    int i;
-    private boolean running;
+
+    DrawableStandardRobot robot;
 
     public SimPanel() {
         super();
         setBackground(Color.WHITE);
-
-        running = true;
-
-        i=10;
-    }
-
-    public void stop() {
-        running = false;
+        robot = new DrawableStandardRobot((StandardRobot) Robot.getInstance());
     }
 
     public void paintComponent(Graphics g)  // draw graphics in the panel
     {
-        i++;
         int width = getWidth();
         int height = getHeight();
 
         super.paintComponent(g);
 
-
-        g.fillRect(20 + i, 20 + i, 40, 40);
+        robot.setPpm((double)width/10.0);
+        robot.draw(new Point(0, 0), new Point(width, height), g);
     }
 }

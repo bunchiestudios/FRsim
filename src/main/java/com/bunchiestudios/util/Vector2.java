@@ -124,4 +124,12 @@ public class Vector2 {
     public Vector2 rotate(double theta) {
         return Matrix2.rotate(theta).times(this);
     }
+
+    @Override
+    public String toString() {
+        return "com.bunciestudios.util.Vector2[" +
+                "x=" + x +
+                ", y=" + y +
+                ']';
+    }
 }

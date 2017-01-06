@@ -1,5 +1,7 @@
 package com.bunchiestudios.draw;
 
+import com.bunchiestudios.sim.Simulator;
+import com.bunchiestudios.util.Vector2;
 import org.junit.Test;
 
 /**
@@ -9,8 +11,11 @@ public class RunWindow {
 
     @Test
     public void windowTest() throws InterruptedException {
-        Thread t = new Draw();
-        t.start();
-        t.join();
+        Thread sim = new Simulator(new Vector2(2, 2), 0);
+        Thread draw = new Draw();
+        sim.start();
+        draw.start();
+        draw.join();
+        sim.join();
     }
 }

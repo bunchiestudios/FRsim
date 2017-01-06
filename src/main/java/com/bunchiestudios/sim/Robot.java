@@ -118,4 +118,7 @@ public class Robot {
     public Vector2 getPosition() {
         return position;
     }
+    public double getTheta() {
+        return theta;
+    }
 }
